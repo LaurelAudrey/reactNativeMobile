@@ -3,14 +3,14 @@ import { Avatar, ListItem } from 'react-native-elements';
 import { useState } from 'react';
 import { CAMPSITES } from '../shared/campsites';
 
-const DirectoryScreen = ({ nvaigation }) => {
+const DirectoryScreen = ({ navigation }) => {
     const [campsites, setCampsites] = useState(CAMPSITES);
     
     const renderDirectoryItem = ({ item: campsite }) => {
         return (
             <ListItem 
                 onPress={() => 
-                    nvaigation.navigate('CampsiteInfo', { campsite })
+                    navigation.navigate('CampsiteInfo', { campsite })
                     }
             >
                 <Avatar source={campsite.image} rounded />
