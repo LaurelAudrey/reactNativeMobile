@@ -8,9 +8,8 @@ const FeaturedItem = (props) => {
     const { item } = props;
 
     if (props.isLoading) {
-        return <Loading />
+        return <Loading />;
     }
-
     if (props.errMess) {
         return (
             <View>
@@ -18,7 +17,6 @@ const FeaturedItem = (props) => {
             </View>
         );
     }
-
     if (item) {
         return (
             <Card containerStyle={{ padding: 0 }}>
@@ -48,23 +46,25 @@ const HomeScreen = () => {
     const partners = useSelector((state) => state.partners);
 
     const featCampsite = campsites.campsitesArray.find((item) => item.featured);
-    const featPromotion = promotions.promotionsArray.find((item) => item.featured);
+    const featPromotion = promotions.promotionsArray.find(
+        (item) => item.featured
+    );
     const featPartner = partners.partnersArray.find((item) => item.featured);
 
     return (
         <ScrollView>
-            <FeaturedItem 
-                item={featCampsite} 
+            <FeaturedItem
+                item={featCampsite}
                 isLoading={campsites.isLoading}
                 errMess={campsites.errMess}
             />
-            <FeaturedItem 
+            <FeaturedItem
                 item={featPromotion}
                 isLoading={promotions.isLoading}
-                errMess={promotions.errMess} 
+                errMess={promotions.errMess}
             />
-            <FeaturedItem 
-                item={featPartner} 
+            <FeaturedItem
+                item={featPartner}
                 isLoading={partners.isLoading}
                 errMess={partners.errMess}
             />
