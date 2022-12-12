@@ -146,12 +146,12 @@ const Main = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchCampsites());
-        dispatch(fetchPromotions());
-        dispatch(fetchPartners());
-        dispatch(fetchComments());
+       dispatch(fetchCampsites());
+       dispatch(fetchPromotions());
+       dispatch(fetchPartners());
+       dispatch(fetchComments()); 
     }, [dispatch]);
-
+    
     return (
         <View
             style={{
@@ -222,7 +222,7 @@ const Main = () => {
                             <Icon
                                 name='address-card'
                                 type='font-awesome'
-                                size={24}
+                                size={20} // adjusted from instructions to prevent cuttin off logo
                                 iconStyle={{ width: 24 }}
                                 color={color}
                             />
